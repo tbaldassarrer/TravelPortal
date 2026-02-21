@@ -1,3 +1,6 @@
+![Preview](images/screenshots/home_destino.jpg)
+
+
 #  Portal de Viajes
 
 Proyecto web estático desarrollado con HTML, CSS y JavaScript enfocado en diseño UI moderno, experiencia de usuario y coherencia visual.
