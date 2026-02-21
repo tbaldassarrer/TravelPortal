@@ -3,62 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Barcelona: Ciudad Cosmopolita</title>
+  <title>Barcelona | Portal de Viajes</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <h1 class="brand">Barcelona: Ciudad Cosmopolita</h1>
-      <nav class="main-nav">
-        <a href="index.html">Volver al inicio</a>
+      <h1 class="brand">Portal de Viajes</h1>
+      <nav class="main-nav" aria-label="Navegación principal">
         <a href="index.html#catalogo">Catálogo</a>
+        <a href="index.html#ofertas">Ofertas</a>
         <a href="index.html#contacto">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <img class="hero-image" src="images/barcelona.jpg" alt="Imagen de Barcelona" />
-
-      <section class="section">
-        <h2 class="section-title">Atracciones principales</h2>
-        <ol>
-          <li>Sagrada Familia</li>
-          <li>Parque Güell</li>
-          <li>Las Ramblas</li>
-          <li>Barrio Gótico</li>
-          <li>Casa Batlló</li>
-        </ol>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Gastronomía</h2>
-        <ul>
-          <li>Paella</li>
-          <li>Tapas</li>
-          <li>Crema catalana</li>
-          <li>Pan con tomate</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Transporte</h2>
-        <div class="info-box">
-          <p>Barcelona tiene una red de metro y autobuses muy completa. Recomendación: usa tarjeta T-casual o T-usual.</p>
-          <p>Más información: <a href="https://www.tmb.cat/es/barcelona/metro/lineas" target="_blank" rel="noopener">Metro de Barcelona (TMB)</a></p>
+  <main>
+    <section class="section destination-hero">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Inicio</a>
+          <span>›</span>
+          <span>Barcelona</span>
         </div>
-      </section>
 
-      <a class="btn" href="index.html">Volver al inicio</a>
-    </div>
+        <h2 class="destination-title">Barcelona: Ciudad Cosmopolita</h2>
+        <img class="hero-image" src="images/barcelona.jpg" alt="Vista de Barcelona" loading="lazy">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid" style="grid-template-columns: 2fr 1fr;">
+        <article class="info-box">
+          <h3>Atracciones principales</h3>
+          <ol>
+            <li>Sagrada Familia</li>
+            <li>Parque Güell</li>
+            <li>Las Ramblas</li>
+            <li>Barrio Gótico</li>
+            <li>Casa Batlló</li>
+          </ol>
+
+          <h3 style="margin-top: 16px;">Gastronomía</h3>
+          <ul>
+            <li>Paella</li>
+            <li>Tapas</li>
+            <li>Crema catalana</li>
+            <li>Pan con tomate</li>
+          </ul>
+        </article>
+
+        <aside class="info-box">
+          <h3>Transporte</h3>
+          <p>Barcelona tiene una red de metro y autobuses muy completa. Recomendación: usa tarjeta T-casual o T-usual.</p>
+
+          <p style="margin-top: 12px;">
+            <a class="btn" href="https://www.tmb.cat/" target="_blank" rel="noopener">Metro de Barcelona (TMB)</a>
+          </p>
+
+          <p style="margin-top: 12px;">
+            <a class="btn btn-outline" href="index.html#catalogo">Volver al catálogo</a>
+          </p>
+        </aside>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p class="small">Portal de Viajes — Barcelona</p>
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-title">Portal de Viajes</p>
+        <p class="small">&copy; 2026 — Hecho con ❤️</p>
+      </div>
+      <div class="footer-contact">
+        <p class="small">Contacto:</p>
+        <a class="footer-link" href="mailto:info@portaldeviajes.example">info@portaldeviajes.example</a>
+      </div>
     </div>
   </footer>
 </body>

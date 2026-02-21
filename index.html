@@ -4,7 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portal de Viajes</title>
+
+  <!-- Tipografía -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
@@ -12,7 +21,8 @@
   <header class="site-header">
     <div class="container header-inner">
       <h1 class="brand">Portal de Viajes</h1>
-      <nav class="main-nav">
+
+      <nav class="main-nav" aria-label="Navegación principal">
         <a href="#catalogo">Catálogo</a>
         <a href="#ofertas">Ofertas</a>
         <a href="#contacto">Contacto</a>
@@ -22,19 +32,27 @@
 
   <main>
     <section class="hero">
-      <div class="container">
-        <h2>Encuentra tu próxima aventura</h2>
-        <p>Guía de destinos, ideas y consejos para planear tus vacaciones.</p>
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Encuentra tu próxima aventura</h2>
+          <p>Guía de destinos, ideas y consejos para planear tus vacaciones.</p>
+
+          <div class="hero-actions">
+            <a class="btn" href="#catalogo">Explorar destinos</a>
+            <a class="btn btn-outline" href="#ofertas">Ver ofertas</a>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="catalogo" class="section">
       <div class="container">
         <h2 class="section-title">Catálogo de destinos</h2>
+        <p class="section-subtitle">Elige un destino y descubre lo mejor de cada ciudad.</p>
 
         <div class="grid">
           <article class="card">
-            <img src="images/barcelona.jpg" alt="Barcelona" />
+            <img src="images/barcelona.jpg" alt="Barcelona" loading="lazy" />
             <div class="card-body">
               <h3>Barcelona</h3>
               <p>Ciudad cosmopolita, arte y playa.</p>
@@ -43,7 +61,7 @@
           </article>
 
           <article class="card">
-            <img src="images/cancun.jpg" alt="Cancún" />
+            <img src="images/cancun.jpg" alt="Cancún" loading="lazy" />
             <div class="card-body">
               <h3>Cancún</h3>
               <p>Caribe, relax y excursiones.</p>
@@ -52,7 +70,7 @@
           </article>
 
           <article class="card">
-            <img src="images/paris.jpg" alt="París" />
+            <img src="images/paris.jpg" alt="París" loading="lazy" />
             <div class="card-body">
               <h3>París</h3>
               <p>Historia, museos y paseos.</p>
@@ -61,7 +79,7 @@
           </article>
 
           <article class="card">
-            <img src="images/tokyo.jpg" alt="Tokio" />
+            <img src="images/tokyo.jpg" alt="Tokio" loading="lazy" />
             <div class="card-body">
               <h3>Tokio</h3>
               <p>Tecnología, tradición y gastronomía.</p>
@@ -70,7 +88,7 @@
           </article>
 
           <article class="card">
-            <img src="images/roma.jpg" alt="Roma" />
+            <img src="images/roma.jpg" alt="Roma" loading="lazy" />
             <div class="card-body">
               <h3>Roma</h3>
               <p>Antigüedad, plazas y comida italiana.</p>
@@ -81,9 +99,11 @@
       </div>
     </section>
 
-    <section id="ofertas" class="section">
+    <section id="ofertas" class="section section-alt">
       <div class="container">
         <h2 class="section-title">Ofertas especiales</h2>
+        <p class="section-subtitle">Ahorra en tus próximos planes con estas propuestas.</p>
+
         <div class="info-box">
           <p>✈️ Vuelo + hotel a Madrid desde <strong>€499</strong></p>
           <p>🏝️ Paquete todo incluido en Cancún desde <strong>€699</strong></p>
@@ -94,9 +114,16 @@
   </main>
 
   <footer id="contacto" class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Portal de Viajes — Hecho con ❤️</p>
-      <p class="small">Contacto: <a href="mailto:info@portaldeviajes.example">info@portaldeviajes.example</a></p>
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-title">Portal de Viajes</p>
+        <p class="small">&copy; 2026 — Hecho con ❤️</p>
+      </div>
+
+      <div class="footer-contact">
+        <p class="small">Contacto:</p>
+        <a class="footer-link" href="mailto:info@portaldeviajes.example">info@portaldeviajes.example</a>
+      </div>
     </div>
   </footer>
 </body>
