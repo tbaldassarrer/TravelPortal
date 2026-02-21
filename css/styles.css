@@ -1,0 +1,188 @@
+/* ===== Estilos generales ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  line-height: 1.5;
+}
+
+a {
+  color: #0b57d0;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+/* ===== Header y navegación ===== */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 16px 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  margin: 0;
+  font-size: 28px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Secciones ===== */
+.section {
+  padding: 22px 0;
+}
+
+.section-title {
+  margin: 0 0 12px 0;
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: #d0edff;
+  padding: 26px 0;
+}
+
+.hero h2 {
+  margin: 0 0 8px 0;
+  color: #666;
+}
+
+/* ===== Grid de tarjetas (index) ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Tarjetas ===== */
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;            /* clave: evita desbordes */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.card-body {
+  padding: 12px 12px 14px 12px;
+}
+
+.card h3, .card h4 {
+  margin: 8px 0 6px 0;
+}
+
+.card p {
+  margin: 0 0 10px 0;
+}
+
+/* ===== IMÁGENES (ANTI-DESBORDE) ===== */
+img {
+  display: block;              /* elimina espacios raros */
+  max-width: 100%;             /* nunca se sale */
+  height: auto;                /* mantiene proporción */
+}
+
+/* En tarjetas: imagen recortada bonita, sin desbordar */
+.card img {
+  width: 100%;
+  height: 190px;               /* altura fija para que todas se vean iguales */
+  object-fit: cover;           /* recorta sin deformar */
+}
+
+/* Imagen grande dentro de páginas de destino */
+.hero-image {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border: 3px solid blue;      /* siguiendo el ejemplo del PDF */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* ===== Listas ===== */
+ol, ul {
+  background-color: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* ===== Bloques de info ===== */
+.info-box {
+  background: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.info-box h3 {
+  margin-top: 0;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  padding: 16px 0;
+  margin-top: 30px;
+}
+
+.small {
+  font-size: 13px;
+  color: #555;
+}
+
+/* ===== Botones ===== */
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #0b57d0;
+  background: #0b57d0;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn:hover {
+  filter: brightness(0.95);
+}
