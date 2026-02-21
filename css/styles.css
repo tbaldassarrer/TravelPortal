@@ -19,8 +19,8 @@ img {
   --text: #1f2937;
   --muted: #6b7280;
 
-  --primary: #1e3a8a;     /* Azul principal */
-  --accent: #0b57d0;      /* Azul botones/links */
+  --primary: #132b5a;      /* Azul noche profundo */
+  --accent: #1a2f6b;       /* Azul sobrio elegante */
   --border: #e5e7eb;
 
   --radius: 14px;
@@ -34,62 +34,83 @@ body {
   line-height: 1.6;
 }
 
-/* Contenedor general */
 .container {
   width: min(1100px, 92%);
   margin: 0 auto;
 }
 
-/* Links */
 a {
   color: var(--accent);
 }
 
 /* ===========================
-   Header
+   Header / Navbar
 =========================== */
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  z-index: 100;
+
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.3s ease;
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 16px 0;
-  flex-wrap: wrap;
+  padding: 10px 0;
 }
 
 .brand {
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 600;
   letter-spacing: -0.3px;
+  color: white;
+  transition: color 0.3s ease;
 }
 
 .main-nav {
   display: flex;
   gap: 14px;
-  flex-wrap: wrap;
 }
 
 .main-nav a {
+  color: rgba(255,255,255,0.85);
   text-decoration: none;
   font-weight: 600;
-  color: var(--text);
-  padding: 8px 10px;
+  padding: 6px 10px;
   border-radius: 10px;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .main-nav a:hover {
-  background: #eef2ff;
+  background: rgba(255,255,255,0.08);
+  color: white;
   transform: translateY(-1px);
+}
+
+/* Navbar cuando sales del hero */
+.site-header.scrolled {
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+}
+
+.site-header.scrolled .brand {
+  color: var(--text);
+}
+
+.site-header.scrolled .main-nav a {
+  color: var(--text);
+}
+
+.site-header.scrolled .main-nav a:hover {
+  background: rgba(26, 47, 107, 0.10);
+  color: var(--accent);
 }
 
 /* ===========================
@@ -97,10 +118,6 @@ a {
 =========================== */
 .section {
   padding: 56px 0;
-}
-
-.section-alt {
-  background: #eef2ff;
 }
 
 .section-title {
@@ -115,32 +132,37 @@ a {
 }
 
 /* ===========================
-   Hero
+   Hero (Elegante A)
 =========================== */
 .hero {
-  background: linear-gradient(135deg, #dbeafe, #eef2ff);
-  padding: 56px 0;
-  border-bottom: 1px solid var(--border);
+  position: relative;
+  background: radial-gradient(1200px 600px at 80% 20%, rgba(255,255,255,0.12), transparent 60%),
+              linear-gradient(135deg, #0b1220 0%, #0f1c3a 45%, #132b5a 100%);
+  padding: 100px 0;
+  color: white;
+  overflow: hidden;
 }
 
-.hero-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+.hero-text {
+  max-width: 620px;
+  padding: 24px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(10px);
 }
 
 .hero-text h2 {
-  font-size: 34px;
-  line-height: 1.15;
-  letter-spacing: -0.4px;
-  margin-bottom: 10px;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 14px;
 }
 
 .hero-text p {
-  color: var(--muted);
-  margin-bottom: 18px;
-  max-width: 60ch;
+  color: rgba(255,255,255,0.85);
+  font-size: 18px;
+  margin-bottom: 22px;
 }
 
 .hero-actions {
@@ -154,28 +176,43 @@ a {
 =========================== */
 .btn {
   display: inline-block;
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: 1px solid var(--accent);
-  background: var(--accent);
-  color: #fff;
-  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 14px;
   font-weight: 700;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+
+  background: var(--accent);
+  color: white;
+  border: none;
 }
 
 .btn:hover {
-  transform: translateY(-1px);
-  filter: brightness(0.96);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(19, 43, 90, 0.35);
+  background: #14255a;
 }
 
 .btn:active {
-  transform: translateY(0px);
+  transform: translateY(-1px);
 }
 
-.btn-outline {
+/* Botones hero */
+.hero .btn {
+  background: white;
+  color: #1e3a8a;
+}
+
+.hero .btn-outline {
   background: transparent;
-  color: var(--accent);
+  border: 2px solid white;
+  color: white;
+}
+
+.hero .btn-outline:hover {
+  background: white;
+  color: #1e3a8a;
 }
 
 /* ===========================
@@ -183,34 +220,22 @@ a {
 =========================== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-}
-
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 560px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .card {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(19, 43, 90, 0.08);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.15);
 }
 
 .card img {
@@ -220,7 +245,7 @@ a {
 }
 
 .card-body {
-  padding: 14px;
+  padding: 16px;
 }
 
 .card h3 {
@@ -230,7 +255,7 @@ a {
 
 .card p {
   color: var(--muted);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 /* ===========================
@@ -238,14 +263,9 @@ a {
 =========================== */
 .info-box {
   background: var(--surface);
-  border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 16px;
+  padding: 18px;
   box-shadow: var(--shadow);
-}
-
-.info-box p + p {
-  margin-top: 10px;
 }
 
 /* ===========================
@@ -254,28 +274,13 @@ a {
 .site-footer {
   background: #ffffff;
   border-top: 1px solid var(--border);
-  padding: 20px 0;
+  padding: 24px 0;
 }
 
 .footer-inner {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
   flex-wrap: wrap;
-}
-
-.footer-title {
-  font-weight: 700;
-}
-
-.footer-link {
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.footer-link:hover {
-  text-decoration: underline;
 }
 
 .small {
@@ -283,19 +288,219 @@ a {
   color: #4b5563;
 }
 
+/* ===========================
+   Scroll animations
+=========================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
 
 /* ===========================
    Destination pages (ciudades)
+   Hero cinematográfico moderado
 =========================== */
-.breadcrumbs {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
+.hero-image {
+  width: 100%;
+  aspect-ratio: 16 / 6;   /* formato panorámico elegante */
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+    filter: contrast(1.03) saturate(1.05);
+
+}
+
+/* ===========================
+   Destination pages layout (tu HTML real)
+   Mejora visual de las 2 cajas + listas + botones
+=========================== */
+
+/* La grid de las páginas de ciudad (tu div: class="container grid") */
+.destination-hero + .section .container.grid {
+  gap: 24px;                 /* más aire entre columnas */
+  align-items: start;        /* evita estiramientos raros */
+}
+
+/* Cada caja blanca (article/aside con class info-box) más premium */
+.destination-hero + .section .info-box {
+  padding: 26px;             /* más aire */
+  border: 1px solid rgba(19, 43, 90, 0.08);
+}
+
+/* Títulos dentro de cajas */
+.destination-hero + .section .info-box h3 {
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+/* Quitar “cutrez” de listas pegadas */
+.destination-hero + .section .info-box ol,
+.destination-hero + .section .info-box ul {
+  padding-left: 18px;
+  margin-bottom: 18px;
+}
+
+.destination-hero + .section .info-box li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* Más separación entre bloques dentro del aside */
+.destination-hero + .section aside.info-box p {
+  margin-top: 12px;          /* ya no dependes de style="" */
+}
+
+/* Botones en el aside: que no se salgan y queden bonitos */
+.destination-hero + .section aside.info-box .btn {
+  width: 100%;
+  text-align: center;
+  white-space: normal;       /* permite salto si el texto es largo */
+}
+
+/* Responsive (en móvil, una columna) */
+@media (max-width: 900px) {
+  .destination-hero + .section .container.grid {
+    grid-template-columns: 1fr !important; /* pisa tu style inline en móvil */
+  }
+}
+
+/* ===========================
+   Botón volver centrado (destinos)
+=========================== */
+.back-to-catalog .btn {
+  opacity: 0.85;
+    padding: 12px 28px;
+  transition: all 0.25s ease;
+}
+
+.back-to-catalog .btn:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+.back-to-catalog {
+  text-align: center;
   margin-top: 10px;
 }
 
+/* ===========================
+   Destinos: layout limpio sin inline styles
+=========================== */
+
+/* Grid de destinos 2 columnas */
+.destination-grid {
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Espaciado interno más pro en info-box solo en destinos */
+.destination-grid .info-box {
+  padding: 26px;
+  border: 1px solid rgba(19, 43, 90, 0.08);
+}
+
+/* Separación entre párrafos/botones en el aside */
+.destination-grid aside.info-box p + p {
+  margin-top: 12px;
+}
+
+/* Botones del aside: ancho completo y centrados */
+.destination-grid aside.info-box .btn {
+  width: 100%;
+  text-align: center;
+  white-space: normal;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .destination-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===========================
+   Destination title + tag
+=========================== */
+
+.destination-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Pequeña etiqueta elegante */
+.destination-tag {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+
+  background: rgba(26, 47, 107, 0.10);
+  color: var(--accent);
+  border: 1px solid rgba(26, 47, 107, 0.20);
+
+  letter-spacing: 0.5px;
+}
+/* ===========================
+   Destinos: cabecera editorial
+=========================== */
+.destination-hero {
+  padding-top: 34px;   /* un pelín más de aire */
+  padding-bottom: 22px;
+}
+
+.destination-title {
+  position: relative;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+
+/* línea fina elegante debajo del título */
+.destination-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 120px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(26, 47, 107, 0.35);
+}
+/* Marco suave + microinteracción en la imagen */
+.hero-image {
+  border: 1px solid rgba(19, 43, 90, 0.10);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hero-image:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.14);
+}
+/* Breadcrumbs más elegantes */
+.breadcrumbs {
+  font-size: 14px;
+  color: var(--muted);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
 .breadcrumbs a {
+  color: var(--accent);
   text-decoration: none;
   font-weight: 600;
 }
@@ -304,22 +509,59 @@ a {
   text-decoration: underline;
 }
 
-.destination-hero {
-  padding: 28px 0 6px 0;
+/* ===========================
+   Navbar: se oculta al bajar, aparece al subir
+=========================== */
+.site-header {
+  will-change: transform;
+  transform: translateY(0);
 }
 
-.destination-title {
-  font-size: 30px;
-  font-weight: 800;
-  letter-spacing: -0.4px;
-  margin-bottom: 10px;
+.site-header.nav-hidden {
+  transform: translateY(-110%);
+}
+/* ===========================
+   Botón scroll to top
+=========================== */
+
+.scroll-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: var(--accent);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
 }
 
-.hero-image {
-  width: 100%;
-  max-height: 360px;
-  object-fit: cover;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+/* Visible */
+.scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Hover elegante */
+.scroll-top:hover {
+  background: #14255a;
+  transform: translateY(-3px);
 }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roma | Portal de Viajes</title>
-
+<script src="js/animations.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -34,14 +34,16 @@
           <span>Roma</span>
         </div>
 
-        <h2 class="destination-title">Roma: Historia y Plazas</h2>
+        <h2 class="destination-title">Roma: Historia y Plazas
+          <span class="destination-tag">Historia</span>
+        </h2>
         <img class="hero-image" src="images/roma.jpg" alt="Roma" loading="lazy">
       </div>
     </section>
 
     <section class="section">
-      <div class="container grid" style="grid-template-columns: 2fr 1fr;">
-        <article class="info-box">
+<div class="container grid destination-grid">
+          <article class="info-box">
           <h3>Imprescindibles</h3>
           <ol>
             <li>Coliseo</li>
@@ -64,16 +66,20 @@
           <h3>Consejo rápido</h3>
           <p>Compra entradas online para evitar colas y lleva calzado cómodo: Roma se disfruta caminando.</p>
 
-          <p style="margin-top: 12px;">
             <a class="btn" href="https://www.turismoroma.it/en" target="_blank" rel="noopener">Turismo Roma</a>
           </p>
 
-          <p style="margin-top: 12px;">
-            <a class="btn btn-outline" href="index.html#catalogo">Volver al catálogo</a>
-          </p>
+          
         </aside>
       </div>
     </section>
+    <section class="section">
+  <div class="container back-to-catalog">
+    <a class="btn btn-outline-dark" href="index.html#catalogo">
+      ← Volver al catálogo
+    </a>
+  </div>
+</section>
   </main>
 
   <footer class="site-footer">
@@ -88,5 +94,8 @@
       </div>
     </div>
   </footer>
+  <button class="scroll-top" aria-label="Volver arriba">
+  ↑
+</button>
 </body>
 </html>

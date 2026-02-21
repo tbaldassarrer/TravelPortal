@@ -11,6 +11,7 @@
 
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="favicon.png">
+  <script src="js/animations.js" defer></script>
 </head>
 
 <body>
@@ -34,14 +35,16 @@
           <span>Barcelona</span>
         </div>
 
-        <h2 class="destination-title">Barcelona: Ciudad Cosmopolita</h2>
+        <h2 class="destination-title">Barcelona: Ciudad Cosmopolita
+          <span class="destination-tag">Mediterráneo</span>
+        </h2>
         <img class="hero-image" src="images/barcelona.jpg" alt="Vista de Barcelona" loading="lazy">
       </div>
     </section>
 
     <section class="section">
-      <div class="container grid" style="grid-template-columns: 2fr 1fr;">
-        <article class="info-box">
+<div class="container grid destination-grid">
+          <article class="info-box">
           <h3>Atracciones principales</h3>
           <ol>
             <li>Sagrada Familia</li>
@@ -64,16 +67,19 @@
           <h3>Transporte</h3>
           <p>Barcelona tiene una red de metro y autobuses muy completa. Recomendación: usa tarjeta T-casual o T-usual.</p>
 
-          <p style="margin-top: 12px;">
             <a class="btn" href="https://www.tmb.cat/" target="_blank" rel="noopener">Metro de Barcelona (TMB)</a>
           </p>
 
-          <p style="margin-top: 12px;">
-            <a class="btn btn-outline" href="index.html#catalogo">Volver al catálogo</a>
-          </p>
         </aside>
       </div>
     </section>
+    <section class="section">
+  <div class="container back-to-catalog">
+    <a class="btn btn-outline-dark" href="index.html#catalogo">
+      ← Volver al catálogo
+    </a>
+  </div>
+</section>
   </main>
 
   <footer class="site-footer">
@@ -88,5 +94,8 @@
       </div>
     </div>
   </footer>
+  <button class="scroll-top" aria-label="Volver arriba">
+  ↑
+</button>
 </body>
 </html>

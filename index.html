@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="es">
-<head>
+<html lang="es" class="no-js">
+  <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portal de Viajes</title>
@@ -15,6 +15,9 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
+    
+  <!-- JS -->
+<script src="js/animations.js" defer></script>
 </head>
 
 <body>
@@ -31,8 +34,8 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-inner">
+    <section class="hero reveal">
+        <div class="container hero-inner">
         <div class="hero-text">
           <h2>Encuentra tu próxima aventura</h2>
           <p>Guía de destinos, ideas y consejos para planear tus vacaciones.</p>
@@ -45,13 +48,13 @@
       </div>
     </section>
 
-    <section id="catalogo" class="section">
+    <section id="catalogo" class="section reveal">
       <div class="container">
         <h2 class="section-title">Catálogo de destinos</h2>
         <p class="section-subtitle">Elige un destino y descubre lo mejor de cada ciudad.</p>
 
         <div class="grid">
-          <article class="card">
+          <article class="card reveal">
             <img src="images/barcelona.jpg" alt="Barcelona" loading="lazy" />
             <div class="card-body">
               <h3>Barcelona</h3>
@@ -60,7 +63,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <img src="images/cancun.jpg" alt="Cancún" loading="lazy" />
             <div class="card-body">
               <h3>Cancún</h3>
@@ -69,7 +72,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <img src="images/paris.jpg" alt="París" loading="lazy" />
             <div class="card-body">
               <h3>París</h3>
@@ -78,7 +81,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <img src="images/tokyo.jpg" alt="Tokio" loading="lazy" />
             <div class="card-body">
               <h3>Tokio</h3>
@@ -87,7 +90,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <img src="images/roma.jpg" alt="Roma" loading="lazy" />
             <div class="card-body">
               <h3>Roma</h3>
@@ -126,5 +129,8 @@
       </div>
     </div>
   </footer>
+  <button class="scroll-top" aria-label="Volver arriba">
+  ↑
+</button>
 </body>
 </html>
